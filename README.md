@@ -61,8 +61,8 @@ Criar Clientes
 POST /clients
 body
 {
-nome: string
-nascimento: dd/MM/YYYY
+nome: string,
+nascimento: dd/MM/YYYY,
 cpf: string (12312312312 || 123.123.123-12)
 }
 ```
@@ -75,10 +75,10 @@ Consultar um Cliente
 GET /clients/CPF (12312312312 || 123.123.123-12)
 Resposta
 {
-id: number
-nome: string
-nascimento: dd/MM/YYYY
-cpf: string (12312312312 || 123.123.123-12)
+id: number,
+nome: string,
+nascimento: dd/MM/YYYY,
+cpf: number,
 created_at: datetime 
 }
 ```
@@ -93,17 +93,17 @@ SKIP: number // quantidade de usuarios que quer pular
 Resposta
 [
 {
-id: number
-nome: string
-nascimento: dd/MM/YYYY
-cpf: string (12312312312 || 123.123.123-12)
+id: number,
+nome: string,
+nascimento: dd/MM/YYYY,
+cpf: number,
 created_at: datetime
 },
 {
-id: number
-nome: string
-nascimento: dd/MM/YYYY
-cpf: string (12312312312 || 123.123.123-12),
+id: number,
+nome: string,
+nascimento: dd/MM/YYYY,
+cpf: number,
 created_at: datetime
 }
 ]
