@@ -26,13 +26,13 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+## Instalação 
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Rodar a Aplicação
 
 ```bash
 # development
@@ -48,25 +48,69 @@ $ npm run start:prod
 ## Test
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# integration tests
+$ npm run test:int
 ```
 
-## Support
+## Rotas
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Criar Clientes
 
-## Stay in touch
+```bash
+# Create Client
+POST /clients
+body
+{
+nome: string
+nascimento: dd/MM/YYYY
+cpf: string (12312312312 || 123.123.123-12)
+}
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+Consultar um Cliente
+
+```bash
+# Get single Client
+GET /clients/CPF (12312312312 || 123.123.123-12)
+Resposta
+{
+id: number
+nome: string
+nascimento: dd/MM/YYYY
+cpf: string (12312312312 || 123.123.123-12)
+created_at: datetime 
+}
+```
+
+Consultar multiplos Clientes com Paginação
+
+```bash
+# Get single Client
+GET /clients/all?take=2&skip=2
+TAKE: number // quantidade de usuarios que quer buscar
+SKIP: number // quantidade de usuarios que quer pular
+Resposta
+[
+{
+id: number
+nome: string
+nascimento: dd/MM/YYYY
+cpf: string (12312312312 || 123.123.123-12)
+created_at: datetime
+},
+{
+id: number
+nome: string
+nascimento: dd/MM/YYYY
+cpf: string (12312312312 || 123.123.123-12),
+created_at: datetime
+}
+]
+```
+
+
+
 
 ## License
 
