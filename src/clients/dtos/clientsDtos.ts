@@ -1,6 +1,7 @@
 import { HttpCode, UnprocessableEntityException } from '@nestjs/common';
 import {
     IsNotEmpty,
+    IsNumber,
     IsString,
     ValidationArguments,
     ValidationOptions,

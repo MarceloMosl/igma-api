@@ -20,9 +20,12 @@ export class ClientsService {
     }
 
     async getAllClients(take: number, skip: number) {
+        const validatedTake = Number.isNaN(Number(take)) ? '' : Number(take);
+        const validatedSkip = Number.isNaN(Number(skip)) ? '' : Number(skip);
+
         return await this.prisma.clients.findMany({
-            take: Number(take), 
-            skip: Number(skip),
+            take: Number(validatedTake), 
+            skip: Number(validatedSkip),
             orderBy: {id: 'asc'}
         })
     }
