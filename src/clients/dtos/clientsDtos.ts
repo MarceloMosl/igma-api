@@ -1,7 +1,6 @@
 import { HttpCode, UnprocessableEntityException } from '@nestjs/common';
 import {
     IsNotEmpty,
-    IsNumber,
     IsString,
     ValidationArguments,
     ValidationOptions,
@@ -44,10 +43,10 @@ function IsDateFormatted(validationOptions?: ValidationOptions) {
             options: validationOptions,
             validator: {
                 validate(value: any, args: ValidationArguments) {
-                    // Define a regular expression for the date format "DD/MM/YYYY"
+                    // Define o formato de data "DD/MM/YYYY"
                     const dateFormatRegex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
 
-                    // Check if the value matches the expected date format
+                   
                     if (!dateFormatRegex.test(value)) {
                         return false;
                     }

@@ -26,13 +26,21 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+<<<<<<< HEAD
 ## Installation
+=======
+## Instalação 
+>>>>>>> 480b2851d9233019ea7df783eef64087118746e9
 
 ```bash
 $ npm install
 ```
 
+<<<<<<< HEAD
 ## Running the app
+=======
+## Rodar a Aplicação
+>>>>>>> 480b2851d9233019ea7df783eef64087118746e9
 
 ```bash
 # development
@@ -48,6 +56,7 @@ $ npm run start:prod
 ## Test
 
 ```bash
+<<<<<<< HEAD
 # unit tests
 $ npm run test
 
@@ -67,6 +76,71 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 - Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
+=======
+# integration tests
+$ npm run test:int
+```
+
+## Rotas
+
+Criar Clientes
+
+```bash
+# Create Client
+POST /clients
+body
+{
+nome: string,
+nascimento: dd/MM/YYYY,
+cpf: string (12312312312 || 123.123.123-12)
+}
+```
+
+
+Consultar um Cliente
+
+```bash
+# Get single Client
+GET /clients/CPF (12312312312 || 123.123.123-12)
+Resposta
+{
+id: number,
+nome: string,
+nascimento: dd/MM/YYYY,
+cpf: number,
+created_at: datetime 
+}
+```
+
+Consultar multiplos Clientes com Paginação
+
+```bash
+# Get single Client
+GET /clients/all?take=2&skip=2
+TAKE: number // quantidade de usuarios que quer buscar
+SKIP: number // quantidade de usuarios que quer pular
+Resposta
+[
+{
+id: number,
+nome: string,
+nascimento: dd/MM/YYYY,
+cpf: number,
+created_at: datetime
+},
+{
+id: number,
+nome: string,
+nascimento: dd/MM/YYYY,
+cpf: number,
+created_at: datetime
+}
+]
+```
+
+
+
+>>>>>>> 480b2851d9233019ea7df783eef64087118746e9
 
 ## License
 
